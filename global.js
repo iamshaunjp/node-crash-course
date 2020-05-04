@@ -25,4 +25,4 @@ console.log(__dirname);
 console.log(__filename);
 
 // no access to DOM methods
-console.log(querySelector);
+console.log(document.querySelector);
