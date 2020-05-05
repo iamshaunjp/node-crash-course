@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-const readStream = fs.createReadStream('docs/blog3.txt', { encoding: 'utf8'});
-const writeStream = fs.createWriteStream('docs/blog4.txt');
+const readStream = fs.createReadStream('./docs/blog3.txt', { encoding: 'utf8'});
+const writeStream = fs.createWriteStream('./docs/blog4.txt');
 
 readStream.on('data', chunk => {
   // console.log('---- NEW CHUNK ----');
@@ -12,11 +12,3 @@ readStream.on('data', chunk => {
 
 // piping
 // readStream.pipe(writeStream);
-
-readStream.on('end', () => {
-  console.log('all read');
-});
-
-readStream.on('error', err => {
-  console.log(err);
-});
