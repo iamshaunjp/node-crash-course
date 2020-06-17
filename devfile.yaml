@@ -1,0 +1,43 @@
+apiVersion: 1.0.0
+metadata:
+  name: nodejs-cc-lesson1-
+
+components:
+  - id: che-incubator/typescript/latest
+    type: chePlugin
+    
+  - alias: node
+    type: dockerimage
+    image: node
+    mountSources: true
+    command: ['sleep', 'infinity']
+    memoryLimit: 512M
+
+  - alias: git
+    type: dockerimage
+    image: sunix/git-devtools
+    mountSources: true
+    memoryLimit: 64M
+    args: ['sleep', 'infinity']
+
+commands:
+
+  - name: node (interactive mode)
+    actions:
+      - type: exec
+        command: node
+        component: node
+        workdir: /projects/node-crash-course
+
+  - name: node -v
+    actions:
+      - type: exec
+        command: node -v
+        component: node
+
+  - name: node test
+    actions:
+      - workdir: /projects/node-crash-course
+        type: exec
+        command: node test
+        component: node
