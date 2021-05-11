@@ -1,2 +1,2 @@
 # node-crash-course
-Course files for the Node.js Crash Course tutorial series on The Net Ninja YouTube channel.
+Check out the branches of this repo for the course files of the Node.js Crash Course tutorial series whcih is available on The Net Ninja YouTube channel.
